@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Todos from "./components/todos/Todos";
 import Header from "./components/layout/Header";
 import AddTodo from "./components/todos/AddTodo";
@@ -16,7 +16,7 @@ class App extends Component {
 
   componentDidMount() {
     axios
-      .get("https://jsonplaceholder.typicode.com/todos?_limit=10")
+      .get("https://jsonplaceholder.typicode.com/todos?_limit=25")
       .then(res => this.setState({ todos: res.data }));
   }
 
